@@ -1,4 +1,4 @@
-package br.com.jonatas.orgs.ui
+package br.com.jonatas.orgs.ui.activity
 
 import android.app.Activity
 import android.os.Bundle
