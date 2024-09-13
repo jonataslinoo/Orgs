@@ -12,14 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Orgs"
         tools:targetApi="31">
-        <activity android:name=".ui.activity.MainActivity"
+        <activity
+            android:name=".ui.activity.FormularioProdutoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 
 </manifest>
