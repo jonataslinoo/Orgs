@@ -1,7 +1,6 @@
 package br.com.jonatas.orgs.ui.activity
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -36,7 +35,6 @@ class FormularioProdutoActivity : AppCompatActivity(R.layout.activity_formulario
 
             val dao = ProdutoDao()
             dao.adiciona(produtoNovo)
-            Log.i("PRODUTO", "onCreate: $produtoNovo")
             finish()
         }
     }
