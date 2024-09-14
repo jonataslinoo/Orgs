@@ -2,11 +2,9 @@ package br.com.jonatas.orgs.ui.recyclerview.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import br.com.jonatas.orgs.R
+import br.com.jonatas.orgs.databinding.ProdutoItemBinding
 import br.com.jonatas.orgs.model.Produto
 
 class ListaProdutosAdapter(
@@ -17,9 +15,8 @@ class ListaProdutosAdapter(
     private val produtos = produtos.toMutableList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.produto_item, parent, false)
-        return ViewHolder(view)
+        val binding = ProdutoItemBinding.inflate(LayoutInflater.from(context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun getItemCount(): Int = produtos.size
@@ -35,13 +32,13 @@ class ListaProdutosAdapter(
         notifyDataSetChanged()
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(binding: ProdutoItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        private val nome = binding.produtoItemNome
+        private val descricao = binding.produtoItemDescricao
+        private val valor = binding.produtoItemValor
         fun vincula(produto: Produto) {
-            val nome = itemView.findViewById<TextView>(R.id.produto_item_nome)
             nome.text = produto.nome
-            val descricao = itemView.findViewById<TextView>(R.id.produto_item_descricao)
             descricao.text = produto.descricao
-            val valor = itemView.findViewById<TextView>(R.id.produto_item_valor)
             valor.text = produto.valor.toPlainString()
         }
     }
