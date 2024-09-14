@@ -1,11 +1,13 @@
 package br.com.jonatas.orgs.ui.activity
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import br.com.jonatas.orgs.R
 import br.com.jonatas.orgs.model.Produto
 import br.com.jonatas.orgs.ui.recyclerview.adapter.ListaProdutosAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.math.BigDecimal
 
 class MainActivity : Activity() {
@@ -36,5 +38,12 @@ class MainActivity : Activity() {
                 )
             )
         )
+
+        val fabNovaNota = findViewById<FloatingActionButton>(R.id.fab_nova_nota)
+        fabNovaNota.setOnClickListener {
+            Intent(this, FormularioProdutoActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
 }
