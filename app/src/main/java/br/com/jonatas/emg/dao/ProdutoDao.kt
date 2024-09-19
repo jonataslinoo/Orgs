@@ -1,6 +1,6 @@
-package br.com.jonatas.orgs.dao
+package br.com.jonatas.emg.dao
 
-import br.com.jonatas.orgs.model.Produto
+import br.com.jonatas.emg.model.Produto
 
 class ProdutoDao {
 

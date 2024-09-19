@@ -1,4 +1,4 @@
-package br.com.jonatas.orgs.model
+package br.com.jonatas.emg.model
 
 import java.math.BigDecimal
 

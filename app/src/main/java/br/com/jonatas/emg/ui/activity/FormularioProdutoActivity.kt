@@ -1,10 +1,10 @@
-package br.com.jonatas.orgs.ui.activity
+package br.com.jonatas.emg.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import br.com.jonatas.orgs.dao.ProdutoDao
-import br.com.jonatas.orgs.databinding.ActivityFormularioProdutoBinding
-import br.com.jonatas.orgs.model.Produto
+import br.com.jonatas.emg.dao.ProdutoDao
+import br.com.jonatas.emg.databinding.ActivityFormularioProdutoBinding
+import br.com.jonatas.emg.model.Produto
 import java.math.BigDecimal
 
 class FormularioProdutoActivity : AppCompatActivity() {

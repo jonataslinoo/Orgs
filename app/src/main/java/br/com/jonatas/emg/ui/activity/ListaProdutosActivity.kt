@@ -1,11 +1,11 @@
-package br.com.jonatas.orgs.ui.activity
+package br.com.jonatas.emg.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import br.com.jonatas.orgs.dao.ProdutoDao
-import br.com.jonatas.orgs.databinding.ActivityListaProdutosBinding
-import br.com.jonatas.orgs.ui.recyclerview.adapter.ListaProdutosAdapter
+import br.com.jonatas.emg.dao.ProdutoDao
+import br.com.jonatas.emg.databinding.ActivityListaProdutosBinding
+import br.com.jonatas.emg.ui.recyclerview.adapter.ListaProdutosAdapter
 
 class ListaProdutosActivity : AppCompatActivity() {
 

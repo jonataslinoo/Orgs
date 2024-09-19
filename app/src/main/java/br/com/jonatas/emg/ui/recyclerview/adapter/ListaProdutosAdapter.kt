@@ -1,11 +1,11 @@
-package br.com.jonatas.orgs.ui.recyclerview.adapter
+package br.com.jonatas.emg.ui.recyclerview.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import br.com.jonatas.orgs.databinding.ProdutoItemBinding
-import br.com.jonatas.orgs.model.Produto
+import br.com.jonatas.emg.databinding.ProdutoItemBinding
+import br.com.jonatas.emg.model.Produto
 
 class ListaProdutosAdapter(
     private val context: Context,

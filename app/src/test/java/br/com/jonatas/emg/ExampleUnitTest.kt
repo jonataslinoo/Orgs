@@ -1,4 +1,4 @@
-package br.com.jonatas.orgs
+package br.com.jonatas.emg
 
 import org.junit.Test
 

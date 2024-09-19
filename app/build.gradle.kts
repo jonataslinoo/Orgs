@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "br.com.jonatas.orgs"
+    namespace = "br.com.jonatas.emg"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "br.com.jonatas.orgs"
+        applicationId = "br.com.jonatas.emg"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
