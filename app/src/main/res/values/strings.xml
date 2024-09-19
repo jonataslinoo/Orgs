@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">eMarketGarden</string>
+    <string name="hint_nome">Nome</string>
+    <string name="hint_descricao">Descrição</string>
+    <string name="hint_valor">Valor</string>
+    <string name="text_button_salvar">Salvar</string>
 </resources>
