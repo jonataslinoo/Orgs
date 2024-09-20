@@ -12,7 +12,8 @@ import br.com.jonatas.emg.model.Produto
 
 class ListaProdutosAdapter(
     private val context: Context,
-    produtos: List<Produto>
+    produtos: List<Produto>,
+    var quandoClicadoNoItemListener: (produto: Produto) -> Unit = {}
 ) : RecyclerView.Adapter<ListaProdutosAdapter.ViewHolder>() {
 
     private val produtos = produtos.toMutableList()
@@ -35,19 +36,30 @@ class ListaProdutosAdapter(
         notifyDataSetChanged()
     }
 
-    class ViewHolder(binding: ProdutoItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(binding: ProdutoItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        private lateinit var produto: Produto
+
         private val nome = binding.produtoItemNome
         private val descricao = binding.produtoItemDescricao
         private val valor = binding.produtoItemValor
         private val imagem = binding.produtoItemImageview
 
         fun vincula(produto: Produto) {
+            this.produto = produto
             nome.text = produto.nome
             descricao.text = produto.descricao
             valor.text = produto.valor.formatBrazilianCurrency()
 
             imagem.visibility = if (produto.imagem != null) View.VISIBLE else View.GONE
             imagem.tryLoadImage(produto.imagem)
+        }
+
+        init {
+            itemView.setOnClickListener {
+                if (::produto.isInitialized) {
+                    quandoClicadoNoItemListener(produto)
+                }
+            }
         }
     }
 }

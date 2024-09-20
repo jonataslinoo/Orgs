@@ -18,12 +18,14 @@ class ProdutoDao {
             Produto(
                 nome = "Cesta de frutas",
                 descricao = "Laranja, manga e uva",
-                valor = BigDecimal("19.99")
+                valor = BigDecimal("19.99"),
+                imagem = "https://images.pexels.com/photos/89778/strawberries-frisch-ripe-sweet-89778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ),
             Produto(
                 nome = "Cesta de verduras",
                 descricao = "Batata, pepino e cenoura",
-                valor = BigDecimal("29.99")
+                valor = BigDecimal("29.99"),
+                imagem = "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg"
             )
         )
     }

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import br.com.jonatas.emg.R
 import br.com.jonatas.emg.dao.ProdutoDao
 import br.com.jonatas.emg.databinding.ActivityListaProdutosBinding
+import br.com.jonatas.emg.ui.dialog.DetalhesProdutoBottomSheetDialog
 import br.com.jonatas.emg.ui.recyclerview.adapter.ListaProdutosAdapter
 
 class ListaProdutosActivity : AppCompatActivity() {
@@ -35,6 +36,12 @@ class ListaProdutosActivity : AppCompatActivity() {
     private fun configuraRecyclerView() {
         val recyclerView = binding.activityListaProdutosRecyclerView
         recyclerView.adapter = adapter
+        adapter.quandoClicadoNoItemListener = { produtoCliado ->
+            DetalhesProdutoBottomSheetDialog(
+                this,
+                produtoCliado
+            ).show()
+        }
     }
 
     private fun configuraFab() {
