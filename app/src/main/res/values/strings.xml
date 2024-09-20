@@ -1,7 +1,18 @@
 <resources>
+
+    <!-- Todas as palavras -->
     <string name="app_name">eMarketGarden</string>
+    <string name="text_button_dialog_confirmar">Confirmar</string>
+    <string name="text_button_dialog_cancelar">Cancelar</string>
+    <string name="text_button_salvar">Salvar</string>
+    <string name="text_button_carregar">Carregar</string>
+
+    <!-- Todos os hints -->
     <string name="hint_nome">Nome</string>
     <string name="hint_descricao">Descrição</string>
     <string name="hint_valor">Valor</string>
-    <string name="text_button_salvar">Salvar</string>
+    <string name="hint_url_da_imagem">Url da imagem</string>
+    <string name="hint_validade">Data de validade</string>
+
+
 </resources>
