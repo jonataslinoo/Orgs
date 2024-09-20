@@ -2,9 +2,12 @@ package br.com.jonatas.emg.ui.recyclerview.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.jonatas.emg.databinding.ProdutoItemBinding
+import br.com.jonatas.emg.extensions.formatBrazilianCurrency
+import br.com.jonatas.emg.extensions.tryLoadImage
 import br.com.jonatas.emg.model.Produto
 
 class ListaProdutosAdapter(
@@ -36,10 +39,15 @@ class ListaProdutosAdapter(
         private val nome = binding.produtoItemNome
         private val descricao = binding.produtoItemDescricao
         private val valor = binding.produtoItemValor
+        private val imagem = binding.produtoItemImageview
+
         fun vincula(produto: Produto) {
             nome.text = produto.nome
             descricao.text = produto.descricao
-            valor.text = produto.valor.toPlainString()
+            valor.text = produto.valor.formatBrazilianCurrency()
+
+            imagem.visibility = if (produto.imagem != null) View.VISIBLE else View.GONE
+            imagem.tryLoadImage(produto.imagem)
         }
     }
 }
