@@ -2,6 +2,7 @@ package br.com.jonatas.emg.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import br.com.jonatas.emg.R
 import br.com.jonatas.emg.dao.ProdutoDao
 import br.com.jonatas.emg.databinding.ActivityFormularioProdutoBinding
 import br.com.jonatas.emg.extensions.tryLoadImage
@@ -20,7 +21,7 @@ class FormularioProdutoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        title = "Cadastrar Produto"
+        title = getString(R.string.titulo_tela_formulario_produto)
         configuraBotaoSalvar()
 
         binding.activityFormularioProdutoImagem.setOnClickListener {

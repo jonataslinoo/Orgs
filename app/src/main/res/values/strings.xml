@@ -1,5 +1,9 @@
 <resources>
 
+    <!-- Todos titulos de telas -->
+    <string name="titulo_tela_lista_produtos">Lista de Produtos</string>
+    <string name="titulo_tela_formulario_produto">Cadastrar Produto</string>
+
     <!-- Todas as palavras -->
     <string name="app_name">eMarketGarden</string>
     <string name="text_button_dialog_confirmar">Confirmar</string>
