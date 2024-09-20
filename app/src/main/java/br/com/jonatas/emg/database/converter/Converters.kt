@@ -1,4 +1,4 @@
-package br.com.jonatas.emg.database
+package br.com.jonatas.emg.database.converter
 
 import androidx.room.TypeConverter
 import java.math.BigDecimal
