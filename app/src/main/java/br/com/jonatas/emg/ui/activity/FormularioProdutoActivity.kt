@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.com.jonatas.emg.dao.ProdutoDao
 import br.com.jonatas.emg.databinding.ActivityFormularioProdutoBinding
+import br.com.jonatas.emg.extensions.tryLoadImage
 import br.com.jonatas.emg.model.Produto
+import br.com.jonatas.emg.ui.dialog.FormularioImagemDialog
 import java.math.BigDecimal
 
 class FormularioProdutoActivity : AppCompatActivity() {
@@ -13,10 +15,20 @@ class FormularioProdutoActivity : AppCompatActivity() {
         ActivityFormularioProdutoBinding.inflate(layoutInflater)
     }
 
+    private var url: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        title = "Cadastrar Produto"
         configuraBotaoSalvar()
+
+        binding.activityFormularioProdutoImagem.setOnClickListener {
+            FormularioImagemDialog(this).show(url) { url ->
+                this.url = url
+                binding.activityFormularioProdutoImagem.tryLoadImage(url)
+            }
+        }
     }
 
     private fun configuraBotaoSalvar() {
@@ -46,7 +58,8 @@ class FormularioProdutoActivity : AppCompatActivity() {
         return Produto(
             nome = nome,
             descricao = descricao,
-            valor = valor
+            valor = valor,
+            imagem = url
         )
     }
 }
