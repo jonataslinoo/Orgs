@@ -11,9 +11,11 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 recyclerview = "1.3.2"
 coil = "2.7.0"
+kspVersion = "1.9.0-1.0.13"
 roomCompiler = "2.6.1"
 roomRuntime = "2.6.1"
-kspVersion = "1.9.0-1.0.13"
+roomKtx = "2.6.1"
+roomVersion = "2.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -28,9 +30,11 @@ androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview"
 coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomCompiler" }
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomRuntime" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
+room = { id = "androidx.room", version.ref = "roomVersion" }
 

@@ -12,7 +12,7 @@ import br.com.jonatas.emg.model.Produto
 
 class ListaProdutosAdapter(
     private val context: Context,
-    produtos: List<Produto>,
+    produtos: List<Produto> = emptyList(),
     var quandoClicadoNoItemListener: (produto: Produto) -> Unit = {}
 ) : RecyclerView.Adapter<ListaProdutosAdapter.ViewHolder>() {
 

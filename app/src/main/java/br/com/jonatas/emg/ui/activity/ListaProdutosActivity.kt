@@ -3,21 +3,24 @@ package br.com.jonatas.emg.ui.activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import br.com.jonatas.emg.R
-import br.com.jonatas.emg.dao.ProdutoDao
+import br.com.jonatas.emg.database.AppDatabase
 import br.com.jonatas.emg.databinding.ActivityListaProdutosBinding
 import br.com.jonatas.emg.ui.dialog.DetalhesProdutoBottomSheetDialog
 import br.com.jonatas.emg.ui.recyclerview.adapter.ListaProdutosAdapter
+import kotlinx.coroutines.launch
 
 class ListaProdutosActivity : AppCompatActivity() {
 
-    val binding by lazy {
+    private val binding by lazy {
         ActivityListaProdutosBinding.inflate(layoutInflater)
     }
-
-    val dao = ProdutoDao()
-    val adapter by lazy {
-        ListaProdutosAdapter(context = this, produtos = dao.buscaTodos())
+    private val adapter by lazy {
+        ListaProdutosAdapter(context = this)
+    }
+    private val produtoDao by lazy {
+        AppDatabase.getInstance(this).produtoDao()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +33,11 @@ class ListaProdutosActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        adapter.atualiza(dao.buscaTodos())
+        lifecycleScope.launch {
+            produtoDao.buscaTodos().collect { produtos ->
+                adapter.atualiza(produtos)
+            }
+        }
     }
 
     private fun configuraRecyclerView() {
